@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var fs = require("fs");
+var toNumber_1 = require("./src/toNumber/toNumber");
+var main_1 = require("./src/Selection Sort/main");
+var main_2 = require("./src/Insertion Sort/main");
+var main_3 = require("./src/Merge Sort/main");
+var numbers = fs.readFileSync('./db/num.1000.1.in', 'utf-8');
+var arrayToSort = (0, toNumber_1.default)(numbers.split("\n"));
+var dadosS = (0, main_1.default)(arrayToSort);
+console.log("Selection Sort:\nOrdena\u00E7\u00E3o: ".concat(dadosS.array, "\nLevou: ").concat(dadosS.tempo.toFixed(4), " ms"));
+console.log("\n\n=============================================================\n\n");
+var dadosI = (0, main_2.default)(arrayToSort);
+console.log("Insertion Sort:\nOrdena\u00E7\u00E3o: ".concat(dadosI.array, "\nLevou: ").concat(dadosI.tempo.toFixed(4), " ms"));
+console.log("\n\n=============================================================\n\n");
+var dadosM = (0, main_3.default)(arrayToSort);
+console.log("Merge Sort:\nOrdena\u00E7\u00E3o: ".concat(dadosM.array, "\nLevou: ").concat(dadosM.tempo.toFixed(4), " ms"));
